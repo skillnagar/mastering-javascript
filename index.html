@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What is Javascript?</title>
+    <!-- Mastering Javascript -->
+    <!-- powered by skillnagar.com -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #efefef;
+            font-family: 'Roboto', sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 200px;
+        }
+        input {
+            width: 300px;
+            display: block;
+            margin: 5px auto;
+            height: 25px;
+            border: 1px solid #48adff;
+            border-radius: 5px;
+            outline: none;
+            padding: 5px;
+            font-size: 18px;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>What is Javascript?</h1>
+    <input type="text" id="myInputText" />
+    <p id="myFeedback"></p>
+    <script>
+        var myInputText = document.getElementById("myInputText");
+        myInputText.addEventListener("keyup", function() {
+            if(myInputText.value.length > 0) {
+                if(isNaN(myInputText.value)) {
+                    // you are entering a non numeric value
+                    document.getElementById("myFeedback").innerHTML = "You are entering a <strong>non numeric</strong> value and length of your string is <strong>" + myInputText.value.length + "</strong>";
+                } else {
+                    // you are entering a numeric value
+                    document.getElementById("myFeedback").innerHTML = "You are entering a <strong>numeric</strong> value and length of your string is <strong>" + myInputText.value.length + "</strong>";
+                }
+            } else {
+                document.getElementById("myFeedback").innerHTML = "";
+            }
+        });
+    </script>
+</body>
+</html>
